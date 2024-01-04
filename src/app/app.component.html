@@ -1,0 +1,63 @@
+<main class="app-main" #app_main>
+  <header class="app-header  sticky left-0 top-0 z-5">
+    <div class="app-logo">{{openDrawer ? 'RukBal': 'RB'}}</div>
+    <div class="app-menu">
+      <div class="app-top-nav">
+        <div class="nav-items">
+          @for (item of topNavs; track $index) {            
+          <div class="nav-item" [routerLinkActive]="'active'"  [routerLink]="item.path">
+            <i class="icon icon-m icon-user">{{item.icon??'🏠' }}</i>
+            <div class="nav-label">
+              {{item.title}}
+              <div class="info">{{item.title}}</div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="theme-switcher">
+        <input
+          class="container_toggle"
+          type="checkbox"
+          id="switch"
+          name="mode"
+          [checked]="themeCheck"
+          (change)="toggleTheme()"
+        />
+        <label for="switch">Toggle</label>
+      </div>
+    </div>
+    <div class="app-settings">
+      <div class="app-profile" [title]="cUser.user_name">
+        <div class="app-user-info">
+          <div class="user-name">{{ cUser.user_name }}</div>
+          <div class="user-role">{{ cUser.role }}</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <content class="app-main-container">
+    <section class="app-left-nav sticky left-0 top-1 ">
+      <ul class="nav-items">
+        @for (user of userService.users(); track $index) {
+        <li class="nav-item" [ngClass]="{ active: $index === 1 }">
+          <i class="icon icon-m icon-home">🏠</i>
+          <div class="nav-label" routerLink="#/home">{{ user.user_name }}</div>
+        </li>
+        }
+      </ul>
+      <div class="drawer-toggler icon pointer fixed left-0 bottom-0" (click)="toggleNavDrawer()" title="Toggle Left Menu">{{openDrawer?'⏮':'⏭'}}</div>
+    </section>
+    <div class="app-main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </content>
+  <footer class="app-footer">
+    <div class="app-copy">RukBal&copy;</div>
+    <div class="app-info">
+      Powered by <span class="tm">Bhushan v{{ 2024 }}_{{ "01" }}</span>
+    </div>
+  </footer>
+</main>
+<p-toast></p-toast>

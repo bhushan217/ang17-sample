@@ -1,0 +1,133 @@
+.app-main
+  height: calc(100vh - 0rem)
+  width: calc(100vw - 0rem)
+  display: flex
+  flex-flow: column
+  .app-header
+    width: 100%
+    display: flex
+    flex-flow: row
+    justify-content: space-between
+    background: var(--bg-color-h)
+    height: var(--len-m)
+    .app-logo
+      font-weight: 500
+      font-size: var(--gap-g)
+      width: var(--len-g)
+      background-color: var(--bg-color-q)
+      display: flex
+      align-items: center
+      justify-content: center
+      color: var(--primary-color)
+    .app-menu
+      flex-grow: 1
+      display: flex
+      flex-flow: row
+      gap: var(--gap-m)
+      .app-top-nav
+        flex-grow: 1
+        display: flex
+        flex-flow: row
+        gap: var(--gap-m)
+        .nav-items
+          flex-grow: 1
+          height: 100%
+          display: flex
+          flex-flow: row
+          justify-content: flex-start
+          gap: var(--gap-m)
+          .nav-item
+            min-width: var(--len-m)
+            height: var(--len-m)
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: var(--gap-m)
+            border-top: 1px solid var(--bg-color-h)
+            padding: var(--gap-m)
+            &.active
+              background-color: var(--bg-color)
+              border-top-color: var(--primary-color)
+            &:hover
+              box-shadow: 0 1px 0 0 var(--primary-color)
+            .icon-m
+              border-radius: 50%
+              background-color: var(--bd-color)
+            .nav-label
+              &.active
+                background-color: var(--bg-color)
+              .info
+                font-size: .7rem
+                color: var(--tx-color-q)
+      .theme-switcher
+        width: var(--len-m)
+        height: 1rem
+    .app-settings
+      display: flex
+      flex-flow: row
+      align-items: center
+      justify-content: center
+      .app-profile
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        .app-user-info
+          display: flex
+          flex-flow: column
+          align-items: center
+          justify-content: center
+          .user-name
+            font-size: var(--gap-l)
+          .user-role
+            font-size: var(--gap-x)
+  .app-main-container
+    flex-grow: 1
+    display: flex
+    flex-flow: row
+    .app-left-nav
+      background-color: var(--bg-color-h)
+      width: var(--len-g)
+      height: 100%
+      .drawer-toggler
+        position: absolute
+        left: 0
+        bottom: 0
+        font-size: var(--gap-g)
+        // color: transparent
+        // text-shadow: 0 0 0 grey
+      .nav-items
+        display: flex
+        flex-flow: column
+        .nav-item
+          width: 100%
+          height: var(--len-m)
+          padding-left: var(--gap-m)
+          display: flex
+          gap: var(--gap-m)
+          justify-content: left
+          align-items: center
+          border-left: 2px solid var(--bg-color-h)
+          &.active
+            background-color: var(--bg-color)
+            border-left: 2px solid var(--primary-color)
+          &:hover
+            box-shadow: 1px 0 0 0 var(--primary-color)
+          .icon-m
+            border-radius: 50%
+            background-color: var(--bd-color)
+    .app-main-content
+      flex-grow: 1
+  .app-footer
+    background-color: var(--bg-color-q)
+    height: 1rem
+    display: flex
+    flex-flow: row
+    font-size: .8rem
+    text-align: right
+    .app-copy
+      width: var(--len-g)
+    .app-info
+      flex-grow: 1
+      .tm
+        color: var(--primary-color)

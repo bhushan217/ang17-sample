@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+
+/// import css-variables from 
+/// import url('https://fonts.googleapis.com/css?family=Poppins:300,400,900&display=swap')
+// @import "primeng/resources/themes/lara-dark-blue/theme.css"
+// @import primeng/resources/themes/mdc-dark-indigo/theme.css
+// @import primeng/resources/primeng.css
+@import primeflex/primeflex.scss
+@import primeicons/primeicons.css
+// *
+//   margin: 0
+//   padding: 0
+//   box-sizing: border-box
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+//   position: relative
+
+body[theme-dark] 
+  --primary-color: #1f7fcd
+  --bg-color: #232323 
+  --bg-color-h: #1c1c1c 
+  --bg-color-q: #131313 
+  --bd-color: #474747
+  --bd-color-h: #333333
+  --tx-color: #e8e8e8
+  --tx-color-h: #dcdcdc
+  --tx-color-q: #919191
+
+body 
+  --primary-color: #3270e2
+  --bg-color: #f8f8f8
+  --bg-color-h: #e9f2f8
+  --bg-color-q: #f2f2f2 
+  --bd-color: #d8d8d8
+  --bd-color-h: #333333
+  --tx-color: #232323
+  --tx-color-h: #2f2f2f
+  --tx-color-q: #717171
+  --len-g: 16rem
+  --len-l: 4rem
+  --len-m: 3rem
+  --len-x: 2rem
+  --gap-g: 1.5rem
+  --gap-l: .7rem
+  --gap-m: .5rem
+  --gap-x: .4rem
+  --danger: #993322
+  width: 100%
+  height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background: var(--bg-color)
+  color: var(--tx-color)
+
+.nav-items
+  padding-inline-start: 0
+.app-main[nav-x]
+  --len-g: 3rem
+  .app-left-nav
+    .nav-label
+      display: none
+
+// ul, li
+//   list-style: none
+
+// h1 
+//   font-family: sans-serif
+//   font-weight: 300
+//   color: var(--tx-color)
+
+.icon
+  font-style: normal
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 2rem
+  height: 2rem
+  color: grey
+  filter: grayscale(100%)
+
+.pointer
+  cursor: pointer
+
+
+.nav-item
+  &:hover
+    cursor: pointer
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after 
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 300ms!important
+  transition-delay: 0!important
+
+// Formly
+label
+  span
+    .ng-star-inserted:contains("*")
+      color: var(--danger)
+.ng-invalid.ng-touched
+  border-right-color: var(--danger)
+formly-form 
+  margin: 1rem
+  display: flex
+  flex-flow: row
+  formly-group
+    display: flex
+    flex-flow: column
+    formly-field 
+      legend
+        padding: .5rem 0
+        border-bottom: 1px solid var(--bd-color)
+      .p-field
+        display: flex
+        flex-wrap: wrap
+        // flex-flow: row
+        justify-content: space-between
+        padding: .5rem 0
+        border-bottom: 1px solid var(--bd-color-h)
+        > *     
+          flex-basis: calc(100% / 2)
+          width: 50%
+        .p-error
+          display: flex
+          flex-grow: 1
+    &:nth-child(even)
+      background: green  
+
+.theme-switcher
+  input[type=checkbox] 
+    height: 0
+    width: 0
+    visibility: hidden
+  label 
+    cursor: pointer
+    text-indent: -9999px
+    width: 1.5rem
+    height: 1rem
+    background: var(--primary-color)
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 1rem
+    position: relative
+    &:after 
+      content: ''
+      background: #fff
+      width: .9rem
+      height: .9rem
+      border-radius: 50%
+      position: absolute
+      top: 0
+      left: 0
+      transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms
+  input:checked + label 
+    background: #FFBD07
+  input:checked + label:after 
+    left: calc(100% - .25rem)
+    transform: translateX(calc(-100% + .125rem)) translateY(calc(100% - .825rem))
+
+/* scrollbar */
+::-webkit-scrollbar 
+  width: 5px
+  height: 5px
+
+
+::-webkit-scrollbar-track 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+  -webkit-border-radius: 10px
+  border-radius: 10px
+
+
+::-webkit-scrollbar-thumb 
+  -webkit-border-radius: 10px
+  border-radius: 10px
+  background: rgba(255, 255, 255, 0.3)
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5)
+
+
+::-webkit-scrollbar-thumb:window-inactive 
+  background: rgba(255, 255, 255, 0.3)
+     
+  

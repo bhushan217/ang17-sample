@@ -1,0 +1,43 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" },
+  "api-users":[
+
+  ],  
+  "users":[
+    {
+      "id": 1,
+      "user_name": "Admin",
+      "role": "admin",
+      "parent_user_id": null,
+      "active_status": "active"
+    },
+    {
+      "id": 2,
+      "user_name": "User",
+      "role": "user",
+      "parent_user_id": null,
+      "active_status": "active"
+    },
+    {
+      "id": 3,
+      "user_name": "Dummy",
+      "role": "user",
+      "parent_user_id": null,
+      "active_status": "inactive"
+    }
+  ],
+  "units":[
+    {
+      "id":1, "units": "cm"
+    },
+    {
+      "id":2, "units": "inch"
+    }
+  ]
+}

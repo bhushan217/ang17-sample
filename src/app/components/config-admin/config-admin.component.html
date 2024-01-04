@@ -1,0 +1,22 @@
+@if(fields$ | async; as fields2){
+  @if(fields2.length){
+  <p-panel subheader="Enter user details">
+    <p-header class="text-3xl text-900 text-center mb-3"> User Form</p-header>
+    <form [formGroup]="form" autocomplete="off">
+      <formly-form [model]="model" [fields]="fields2" [options]="options" [form]="form"></formly-form>
+    </form>
+    <div class="flex w-full gap-2 p-4">
+        <p-button label="Save" icon="pi pi-check" (onClick)="submit()" [disabled]="form.invalid"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary"></p-button>
+    </div>
+  </p-panel>
+  }@else {    
+  <p-messages [enableService]="false" [(value)]="errors"></p-messages>
+  }
+} @else {
+  <p-progressSpinner aria-label="Loading"></p-progressSpinner>
+}
+
+<div class="card">
+  <p-chart type="line" [data]="data2" [options]="chart_options"></p-chart>
+</div>
