@@ -27,7 +27,7 @@ import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 @if( fields$ | async; as fields2){
   @if(fields2.length){
   <p-panel subheader="Enter user details">
-    <p-header class="text-3xl text-900 text-center mb-3"> User Form</p-header>
+    <p-header class="text-3xl text-900 text-center mb-1"> User Form</p-header>
     <form [formGroup]="form" autocomplete="off">
       <formly-form [model]="model" [fields]="fields2" [options]="options" [form]="form"></formly-form>
     </form>

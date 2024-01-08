@@ -21,6 +21,7 @@ body[theme-dark]
   --bg-color-q: #131313 
   --bd-color: #474747
   --bd-color-h: #333333
+  --bd-color-q: #3c3c3c
   --tx-color: #e8e8e8
   --tx-color-h: #dcdcdc
   --tx-color-q: #919191
@@ -31,7 +32,8 @@ body
   --bg-color-h: #e9f2f8
   --bg-color-q: #f2f2f2 
   --bd-color: #d8d8d8
-  --bd-color-h: #333333
+  --bd-color-h: #c8c8c8
+  --bd-color-q: #d0d0d0
   --tx-color: #232323
   --tx-color-h: #2f2f2f
   --tx-color-q: #717171
@@ -101,17 +103,25 @@ label
       color: var(--danger)
 .ng-invalid.ng-touched
   border-right-color: var(--danger)
-formly-form 
+formly-form, formly-form > formly-field
   margin: 1rem
   display: flex
   flex-flow: row
-  formly-group
+  width: 100%
+  > formly-group
     display: flex
-    flex-flow: column
-    formly-field 
+    flex-flow: row
+    flex-wrap: wrap
+    width: 100%
+    gap: .5rem
+    > formly-field:has(> b2k-panel-wrapper), > formly-field:has(> formly-object-type), > formly-field:has(> formly-group), formly-wrapper-primeng-form-field .p-field > .p-error
+      flex-basis: 100%
+    > formly-field 
+      width: 48%
       legend
         padding: .5rem 0
         border-bottom: 1px solid var(--bd-color)
+        width: 100%
       .p-field
         display: flex
         flex-wrap: wrap
@@ -119,9 +129,9 @@ formly-form
         justify-content: space-between
         padding: .5rem 0
         border-bottom: 1px solid var(--bd-color-h)
-        > *     
-          flex-basis: calc(100% / 2)
-          width: 50%
+        // > *     
+        //   flex-basis: calc(100% / 2)
+        //   width: 50%
         .p-error
           display: flex
           flex-grow: 1

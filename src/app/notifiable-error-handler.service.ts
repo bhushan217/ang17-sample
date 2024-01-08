@@ -12,7 +12,7 @@ export class NotifiableErrorHandler implements ErrorHandler {
       this.pmgMessageSvc.add({
         severity: 'error',
         summary: `Error: ${error.name}`,
-        detail: `Error was detected! We are already working on it!${error.message}`,
+        detail: `${error.message}`,
         life: DURATION
       } as Message);
     })

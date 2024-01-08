@@ -6,7 +6,7 @@ import { FieldType, FormlyModule } from '@ngx-formly/core';
   standalone:true,
   imports:[CommonModule, FormlyModule],
   template: `
-    <div class="card mb-3">
+    <div class="card mb-1">
       <div class="card-body">
         <legend *ngIf="props.label">{{ props.label }}</legend>
         <p *ngIf="props.description">{{ props.description }}</p>
